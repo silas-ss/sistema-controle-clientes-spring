@@ -1,0 +1,27 @@
+<html layout:decorator="layout">
+	<div layout:fragment="content">
+	
+		<a href="/occupations/new" class="btn btn-primary">Adicionar</a><br/>
+	
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Descrição</th>
+					<th>Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-th-each="occupation : ${occupations}">
+					<td data-th-text="${occupation.id}"></td>
+					<td data-th-text="${occupation.description}"></td>					
+					<td>
+						<a th:href="@{'/occupations/{id}/edit' (id=${occupation.id})}" class="btn btn-info">Editar</a>
+						<a th:href="@{'/occupations/{id}/delete' (id=${occupation.id})}" class="btn btn-danger">Excluir</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+</html>

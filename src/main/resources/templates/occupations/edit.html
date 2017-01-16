@@ -1,0 +1,18 @@
+<html layout:decorator="layout">
+
+	<div layout:fragment="content">
+	
+		<form action="/occupations/update" method="post">
+		  <div class="form-group">
+		    <label for="occupation">Descrição</label>
+		    <input type="text" class="form-control" id="occupation" name="occupation" th:value="${occupation.description}" />
+		  </div>
+		  
+		  <input type="hidden" name="occupation_id" id="occupation_id" th:value="${occupation.id}"/>
+		  
+		  <button type="submit" class="btn btn-success">Atualizar</button>
+		</form>
+	
+	</div>
+
+</html>

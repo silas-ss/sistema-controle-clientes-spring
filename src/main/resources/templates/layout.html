@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sistema de Controle de Clientes</title>
+
+    
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet" />
+    <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet" />
+    
+    <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>    
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href=".">Controle de Clientes</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/users">Usuários</a></li>
+            <li><a href="/customers">Clientes</a></li>
+            <li><a href="/occupations">Ramo de atividade</a></li>            
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+       		<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" th:text="${session.name}"><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/logout">Sair</a></li>               
+              </ul>
+            </li>
+       	  </ul>
+        </div><!--/.nav-collapse -->       
+        
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div layout:fragment="content" />
+
+    </div><!-- /.container -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>    
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>    
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

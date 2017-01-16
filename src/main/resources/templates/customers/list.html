@@ -1,0 +1,33 @@
+<html layout:decorator="layout">
+	<div layout:fragment="content">
+	
+		<a href="/customers/new" class="btn btn-primary">Adicionar</a><br/>
+	
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Nome</th>
+					<th>E-mail</th>
+					<th>Endereço</th>
+					<th>Telefone</th>
+					<th>Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-th-each="customer : ${customers}">
+					<td data-th-text="${customer.id}"></td>
+					<td data-th-text="${customer.name}"></td>
+					<td data-th-text="${customer.email}"></td>
+					<td data-th-text="${customer.address}"></td>
+					<td data-th-text="${customer.phone}"></td>
+					<td>
+						<a th:href="@{'/customers/{id}/edit' (id=${customer.id})}" class="btn btn-info">Editar</a>
+						<a th:href="@{'/customers/{id}/delete' (id=${customer.id})}" class="btn btn-danger">Excluir</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+</html>
